@@ -1,0 +1,26 @@
+{
+  "nombre": "Dimas Torres",
+  "profesion": "Inteligencia artificial · docencia y ciencia",
+  "descripcion": "Cursos y formación en inteligencia artificial, de los fundamentos a las herramientas, explicados primero con imágenes.",
+  "whatsapp": "",
+  "mensajeWhatsapp": "¡Hola Dimas! Te escribo por la página.",
+  "email": "dimaciodimacio@gmail.com",
+  "redes": [
+    { "texto": "LinkedIn", "link": "https://www.linkedin.com/" },
+    { "texto": "GitHub", "link": "https://github.com/dimacio" }
+  ],
+  "ubicacion": "Buenos Aires, Argentina",
+  "menu": [
+    { "texto": "Inicio", "link": "/" },
+    { "texto": "Cursos", "link": "/cursos" },
+    { "texto": "Sobre mí", "link": "/sobre-mi" },
+    { "texto": "Novedades", "link": "/novedades" },
+    { "texto": "Contacto", "link": "/contacto" }
+  ],
+  "colores": {
+    "fondo": "#F5F4EF",
+    "texto": "#18212B",
+    "principal": "#2F54C9",
+    "suave": "#E3E6EE"
+  }
+}

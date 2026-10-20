@@ -1,0 +1,22 @@
+---
+// Diseño para las páginas de texto escritas en Markdown (.md).
+// Cada archivo .md elige este diseño con la línea `layout: ../layouts/Pagina.astro`
+import Base from './Base.astro';
+
+const { frontmatter } = Astro.props;
+const f = frontmatter.fecha;
+const iso = f instanceof Date ? f.toISOString().slice(0, 10) : f ? String(f).slice(0, 10) : '';
+const fecha = iso
+  ? new Date(iso + 'T12:00:00').toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' })
+  : null;
+---
+<Base titulo={frontmatter.titulo} descripcion={frontmatter.resumen}>
+  <article class="pagina">
+    <div class="angosto">
+      <h1>{frontmatter.titulo}</h1>
+      {fecha && <p class="fecha">{fecha}</p>}
+      {frontmatter.imagen && <img src={frontmatter.imagen} alt={frontmatter.titulo} />}
+      <slot />
+    </div>
+  </article>
+</Base>

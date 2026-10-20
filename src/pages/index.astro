@@ -1,0 +1,46 @@
+---
+// Página de inicio. Los textos se editan en src/data/inicio.json
+import Base from '../layouts/Base.astro';
+import sitio from '../data/sitio.json';
+import inicio from '../data/inicio.json';
+
+const { portada, servicios, frase } = inicio;
+const linkBoton = portada.boton.link === 'whatsapp'
+  ? `https://wa.me/${sitio.whatsapp}?text=${encodeURIComponent(sitio.mensajeWhatsapp)}`
+  : portada.boton.link;
+---
+<Base>
+  <section class="portada">
+    <div class="contenedor">
+      <div>
+        <h1>{portada.titulo}</h1>
+        <p>{portada.subtitulo}</p>
+        <a class="boton" href={linkBoton}>{portada.boton.texto}</a>
+      </div>
+      <img src={portada.imagen} alt={sitio.nombre} />
+    </div>
+  </section>
+
+  <section class="servicios">
+    <div class="contenedor">
+      <h2>{inicio.tituloServicios ?? '¿Cómo puedo acompañarte?'}</h2>
+      <div class="grilla">
+        {servicios.map((s) => (
+          <a class="tarjeta" href={s.link}>
+            <img src={s.imagen} alt="" loading="lazy" />
+            <div>
+              <h3>{s.titulo}</h3>
+              <p>{s.texto}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {frase && (
+    <section class="frase">
+      <div class="angosto"><p>{frase}</p></div>
+    </section>
+  )}
+</Base>

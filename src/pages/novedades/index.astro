@@ -1,0 +1,34 @@
+---
+// Lista automática de novedades: muestra todos los .md de esta carpeta, del más nuevo al más viejo.
+// Para agregar una novedad alcanza con crear un archivo .md nuevo en src/pages/novedades/
+import Base from '../../layouts/Base.astro';
+
+const archivos = Object.values(import.meta.glob('./*.md', { eager: true }));
+// La fecha puede llegar como texto o como fecha: la pasamos siempre a AAAA-MM-DD
+const iso = (f) => (f instanceof Date ? f.toISOString().slice(0, 10) : f ? String(f).slice(0, 10) : '');
+const novedades = archivos
+  .filter((n) => !n.frontmatter.borrador)
+  .sort((a, b) => iso(b.frontmatter.fecha).localeCompare(iso(a.frontmatter.fecha)));
+
+const formatear = (f) => new Date(iso(f) + 'T12:00:00').toLocaleDateString('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<Base titulo="Novedades" descripcion="Talleres, fechas y novedades.">
+  <section class="pagina">
+    <div class="angosto">
+      <h1>Novedades</h1>
+      <p>Talleres, fechas y lo que va pasando.</p>
+      {novedades.length === 0 && <p>Pronto habrá novedades por acá.</p>}
+      <ul class="novedades-lista">
+        {novedades.map((n) => (
+          <li>
+            <a href={n.url}>
+              {n.frontmatter.fecha && <small>{formatear(n.frontmatter.fecha)}</small>}
+              <h3>{n.frontmatter.titulo}</h3>
+              {n.frontmatter.resumen && <p>{n.frontmatter.resumen}</p>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>

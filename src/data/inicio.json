@@ -1,0 +1,30 @@
+{
+  "portada": {
+    "titulo": "Inteligencia artificial para ver antes de leer",
+    "subtitulo": "Cursos y talleres de IA, de la estadística a los agentes. Cada idea tiene una imagen: primero se entiende mirándola, después aparecen las ecuaciones y el código.",
+    "imagen": "/img/portada.svg",
+    "boton": { "texto": "Ver los cursos", "link": "/cursos" }
+  },
+  "tituloServicios": "Qué hago",
+  "servicios": [
+    {
+      "titulo": "Cursos de fundamentos",
+      "texto": "De la estadística básica a los modelos de lenguaje y los generativos. Con una vía sin código y otra con código en todo.",
+      "imagen": "/img/servicio-1.svg",
+      "link": "/cursos"
+    },
+    {
+      "titulo": "Herramientas de IA",
+      "texto": "Prompt, context y harness engineering: usar bien los modelos, guiarlos con tus fuentes y armar agentes que trabajen con vos.",
+      "imagen": "/img/servicio-2.svg",
+      "link": "/cursos#herramientas"
+    },
+    {
+      "titulo": "IA aplicada a la ciencia",
+      "texto": "Redes neuronales equivariantes para química computacional, docking y dinámica molecular.",
+      "imagen": "/img/servicio-3.svg",
+      "link": "/sobre-mi"
+    }
+  ],
+  "frase": "En el fondo, casi todo es una matriz de correlación."
+}

@@ -1,0 +1,111 @@
+/* Diseño general del sitio. Los colores vienen de src/data/sitio.json */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); }
+h3 { font-size: 1.3rem; }
+
+a { color: var(--principal); }
+img { max-width: 100%; height: auto; display: block; }
+
+.contenedor { width: min(1080px, 100% - 2rem); margin-inline: auto; }
+.angosto { width: min(720px, 100% - 2rem); margin-inline: auto; }
+
+/* Encabezado */
+.encabezado { padding: 1.25rem 0; border-bottom: 1px solid var(--suave); }
+.encabezado .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.marca { text-decoration: none; color: var(--texto); }
+.marca strong { font-family: 'Fraunces', Georgia, serif; font-size: 1.35rem; font-weight: 500; display: block; }
+.marca span { font-size: 0.85rem; opacity: 0.7; }
+.menu { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.menu a { color: var(--texto); text-decoration: none; font-size: 0.95rem; }
+.menu a:hover, .menu a[aria-current] { color: var(--principal); }
+
+/* Botones */
+.boton {
+  display: inline-block;
+  background: var(--principal);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.boton:hover { filter: brightness(1.08); }
+
+/* Portada */
+.portada { padding: clamp(2.5rem, 7vw, 5rem) 0; }
+.portada .contenedor { display: grid; gap: 2.5rem; align-items: center; grid-template-columns: 1fr; }
+@media (min-width: 800px) { .portada .contenedor { grid-template-columns: 1.1fr 0.9fr; } }
+.portada p { font-size: 1.15rem; margin: 0 0 1.75rem; max-width: 34ch; }
+.portada img { border-radius: 1.5rem; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+
+/* Servicios */
+.servicios { padding: 3rem 0 4rem; }
+.grilla { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.tarjeta {
+  background: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  transition: transform 0.2s;
+}
+.tarjeta:hover { transform: translateY(-3px); }
+.tarjeta img { aspect-ratio: 3 / 2; object-fit: cover; width: 100%; }
+.tarjeta div { padding: 1.25rem 1.4rem 1.5rem; }
+.tarjeta p { margin: 0; font-size: 0.97rem; opacity: 0.85; }
+
+/* Frase */
+.frase { background: var(--suave); padding: 3.5rem 0; text-align: center; }
+.frase p { font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-style: italic; margin: 0; }
+
+/* Páginas de texto */
+.pagina { padding: 3rem 0 4.5rem; }
+.pagina img { border-radius: 1rem; margin: 1.5rem 0; }
+.pagina .fecha { font-size: 0.9rem; opacity: 0.65; margin-bottom: 1.5rem; }
+
+/* Lista de novedades */
+.novedades-lista { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; gap: 1rem; }
+.novedades-lista a { display: block; background: #fff; border-radius: 1rem; padding: 1.25rem 1.5rem; text-decoration: none; color: inherit; }
+.novedades-lista a:hover h3 { color: var(--principal); }
+.novedades-lista h3 { margin: 0.2rem 0 0.4rem; }
+.novedades-lista p { margin: 0; opacity: 0.8; font-size: 0.97rem; }
+.novedades-lista small { opacity: 0.6; }
+
+/* Pie */
+.pie { border-top: 1px solid var(--suave); padding: 2rem 0 5rem; font-size: 0.9rem; }
+.pie .contenedor { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
+.pie a { color: inherit; }
+
+/* Botón flotante de WhatsApp */
+.whatsapp {
+  position: fixed; right: 1.25rem; bottom: 1.25rem;
+  width: 3.5rem; height: 3.5rem; border-radius: 50%;
+  background: #25D366; display: grid; place-items: center;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.18);
+}
+.whatsapp svg { width: 1.8rem; height: 1.8rem; fill: #fff; }
+
+/* Formularios embebidos (Tally, Google Forms) */
+.embebido { width: 100%; min-height: 520px; border: 0; border-radius: 1rem; background: #fff; }
