@@ -41,6 +41,12 @@ Excepción: si él dice explícitamente "publicalo directo", podés saltear la v
 - Achicalas antes de guardar: máximo 1600 px de lado y que pesen menos de 400 KB (usá `npx sharp-cli` o Python con Pillow). Las fotos del celular pesan demasiado.
 - Escribí siempre un texto alternativo (`alt`) que describa la foto.
 
+### Si pide que generes una imagen (tipo IA)
+- Vos no generás imágenes fotográficas ni artísticas. Decíselo en una frase, sin tecnicismos, y ofrecele el camino: "Te escribo el pedido para que la generes en Gemini; después me la mandás y la pongo".
+- Escribile el pedido listo para pegar en Gemini: un párrafo en español con qué se ve, encuadre, luz, colores y estilo, coherente con los colores del sitio (`sitio.json`). Indicá el formato según dónde va (portada vertical 4:5, tarjetas horizontal 3:2, notas horizontal 3:2) y pedí que no tenga texto.
+- Cuando te la mande, seguí las reglas de fotos de arriba.
+- Ilustraciones simples (íconos, diagramas, formas abstractas) sí podés dibujarlas vos en SVG, siempre que encajen con el estilo del sitio. Ofrecelo solo si tiene sentido para lo que pide.
+
 ## Reglas que no se rompen
 
 - **No toques** `src/layouts/`, `src/styles/`, `astro.config.mjs` ni `package.json`, salvo que él pida explícitamente un cambio de diseño. Si lo pide, describile el cambio y confirmá antes de hacerlo.
