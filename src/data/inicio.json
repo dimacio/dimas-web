@@ -2,15 +2,18 @@
   "portada": {
     "titulo": "Inteligencia artificial para ver antes de leer",
     "subtitulo": "Cursos y talleres de IA, de la estadística a los agentes. Cada idea tiene una imagen: primero se entiende mirándola, después aparecen las ecuaciones y el código.",
-    "imagen": "/img/portada.svg",
-    "boton": { "texto": "Ver los cursos", "link": "/cursos" }
+    "imagen": "/img/portada.webp",
+    "boton": {
+      "texto": "Ver los cursos",
+      "link": "/cursos"
+    }
   },
   "tituloServicios": "Qué hago",
   "servicios": [
     {
       "titulo": "Cursos de fundamentos",
       "texto": "De la estadística básica a los modelos de lenguaje y los generativos. Con una vía sin código y otra con código en todo.",
-      "imagen": "/img/servicio-1.svg",
+      "imagen": "/img/fundamentos.webp",
       "link": "/cursos"
     },
     {
@@ -22,7 +25,7 @@
     {
       "titulo": "IA aplicada a la ciencia",
       "texto": "Redes neuronales equivariantes para química computacional, docking y dinámica molecular.",
-      "imagen": "/img/servicio-3.svg",
+      "imagen": "/img/ciencia.webp",
       "link": "/sobre-mi"
     }
   ],

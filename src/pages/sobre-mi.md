@@ -2,7 +2,7 @@
 layout: ../layouts/Pagina.astro
 titulo: Sobre mí
 resumen: Farmacéutico, doctor de la UBA y especialista en inteligencia artificial.
-imagen: /img/sobre-mi.svg
+imagen: /img/sobre-mi.webp
 ---
 
 Soy farmacéutico y doctor de la Universidad de Buenos Aires. Vengo de la ciencia experimental y del control de calidad, y siempre mantuve una pata en cada lado: me interesa conocer el universo completo de la química en vez de encerrarme en un nicho. Ese mismo impulso me llevó a la inteligencia artificial.
